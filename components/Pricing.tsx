@@ -13,71 +13,81 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: 'STARTER',
-      price: '25 000',
-      subtitle: 'Pour indépendants et petits commerces',
-      description: 'Site vitrine d\'une page professionnel',
+      name: 'LANDING PAGE',
+      price: '35 000',
+      originalPrice: '75 000',
+      subtitle: 'Pour formations, événements et services',
+      description: 'Page de conversion optimisée',
       features: [
-        'Site web d\'une page',
-        'Design moderne et professionnel',
-        'Présentation de l\'activité',
-        'Section services',
-        'Galerie photos',
-        'Bouton contact WhatsApp',
-        'Intégration réseaux sociaux',
-        'Responsive (mobile, tablette, PC)',
-        'Déploiement sur Vercel',
-        'Configuration initiale'
+        'Design personnalisé moderne',
+        'Page unique ultra-optimisée',
+        'Section héro percutante',
+        'Présentation de l\'offre',
+        'Bénéfices et témoignages',
+        'Formulaire de contact',
+        'Boutons d\'action WhatsApp',
+        'Animations modernes',
+        'Responsive parfait',
+        'Optimisation conversion',
+        'SEO de base',
+        'Déploiement rapide'
       ],
-      delay: '2 à 4 jours',
+      delay: '7 jours',
       popular: false,
-      formule: 'Starter'
-    },
-    {
-      name: 'BUSINESS',
-      price: '50 000',
-      subtitle: 'Pour PME, restaurants et entreprises',
-      description: 'Site vitrine complet multi-pages',
-      features: [
-        'Site vitrine jusqu\'à 5 pages',
-        'Design personnalisé',
-        'Page d\'accueil',
-        'Page À propos',
-        'Page Services',
-        'Page Galerie/Réalisations',
-        'Page Contact avec formulaire',
-        'Bouton WhatsApp',
-        'Intégration réseaux sociaux',
-        'Optimisation SEO de base',
-        'Responsive complet',
-        'Déploiement sur Vercel'
-      ],
-      delay: '4 à 7 jours',
-      popular: true,
-      formule: 'Business'
+      formule: 'Landing Page',
+      badge: 'OFFRE LANCEMENT'
     },
     {
       name: 'E-COMMERCE',
-      price: '85 000',
+      price: '75 000',
+      originalPrice: '200 000',
       subtitle: 'Pour boutiques et commerçants',
       description: 'Boutique en ligne complète',
       features: [
         'Boutique en ligne fonctionnelle',
-        'Catalogue de 20 produits max',
-        'Présentation détaillée produits',
-        'Catégories de produits',
+        'Catalogue produits illimité',
+        'Gestion des catégories',
+        'Fiches produits détaillées',
+        'Galerie photos par produit',
         'Barre de recherche',
-        'Filtres de recherche',
-        'Panier côté client',
+        'Filtres de recherche avancés',
+        'Panier d\'achat intelligent',
         'Commande via WhatsApp',
-        'Galerie de produits',
-        'Design personnalisé responsive',
-        'Optimisation SEO de base',
-        'Déploiement sur Vercel'
+        'Paiement Mobile Money',
+        'Design moderne responsive',
+        'Optimisation SEO e-commerce',
+        'Formation gestion incluse'
       ],
-      delay: '7 à 12 jours',
+      delay: '10-14 jours',
+      popular: true,
+      formule: 'E-commerce',
+      badge: 'PLUS POPULAIRE'
+    },
+    {
+      name: 'SITE PRO',
+      price: '120 000',
+      originalPrice: '300 000',
+      subtitle: 'Pour cabinets et entreprises',
+      description: 'Site professionnel premium',
+      features: [
+        'Site multi-pages complet',
+        'Design haut de gamme',
+        'Page d\'accueil premium',
+        'Page services détaillée',
+        'Page à propos + équipe',
+        'Portfolio/Réalisations',
+        'Blog (3 articles)',
+        'Page contact + formulaire',
+        'Prise de rendez-vous en ligne',
+        'Intégrations avancées',
+        'SEO professionnel complet',
+        'Optimisation performance',
+        'Support 1 mois inclus'
+      ],
+      delay: '14 jours',
       popular: false,
-      formule: 'E-commerce'
+      formule: 'Site Pro',
+      badge: 'PRESTIGE'
     }
   ]
 
@@ -90,11 +100,20 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* Bandeau Offre Limitée */}
+          <div className="mb-8 inline-block">
+            <div className="bg-gradient-to-r from-red-500 via-orange-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg animate-pulse">
+              <p className="text-sm md:text-base font-bold flex items-center gap-2">
+                ⚡ OFFRE DE LANCEMENT - 10 Places Restantes • Expire le 30 Nov 2026
+              </p>
+            </div>
+          </div>
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
             Tarifs & Formules
           </h2>
           <p className="text-lg md:text-xl text-silver-600 max-w-2xl mx-auto">
-            Des offres transparentes adaptées à chaque type de projet
+            Prix de lancement exceptionnels • Économisez jusqu'à 180 000 FCFA
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black mx-auto mt-6" />
         </motion.div>
@@ -110,11 +129,13 @@ const Pricing = () => {
                 plan.popular ? 'ring-4 ring-black lg:scale-105' : ''
               }`}
             >
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute top-0 right-0 bg-black text-white px-6 py-2 rounded-bl-2xl flex items-center gap-1">
+              {/* Popular/Launch Badge */}
+              {plan.badge && (
+                <div className={`absolute top-0 right-0 px-6 py-2 rounded-bl-2xl flex items-center gap-1 ${
+                  plan.popular ? 'bg-black text-white' : 'bg-gradient-to-r from-green-500 to-green-600 text-white'
+                }`}>
                   <Star className="w-4 h-4 fill-white" />
-                  <span className="text-sm font-bold">POPULAIRE</span>
+                  <span className="text-sm font-bold">{plan.badge}</span>
                 </div>
               )}
 
@@ -124,10 +145,21 @@ const Pricing = () => {
                   <h3 className="text-2xl font-bold text-black mb-2">{plan.name}</h3>
                   <p className="text-sm text-silver-600 mb-6">{plan.subtitle}</p>
                   
-                  <div className="mb-4">
+                  <div className="mb-2">
+                    {plan.originalPrice && (
+                      <div className="mb-2">
+                        <span className="text-2xl text-silver-400 line-through">{plan.originalPrice} FCFA</span>
+                      </div>
+                    )}
                     <span className="text-5xl font-bold text-black">{plan.price}</span>
                     <span className="text-xl text-silver-600 ml-2">FCFA</span>
                   </div>
+                  
+                  {plan.originalPrice && (
+                    <div className="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+                      ÉCONOMISEZ {parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))} FCFA
+                    </div>
+                  )}
                   
                   <p className="text-silver-600 font-medium">{plan.description}</p>
                 </div>
