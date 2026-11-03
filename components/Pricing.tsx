@@ -145,20 +145,31 @@ const Pricing = () => {
                   <h3 className="text-2xl font-bold text-black mb-2">{plan.name}</h3>
                   <p className="text-sm text-silver-600 mb-6">{plan.subtitle}</p>
                   
+                  {/* ÉCONOMIE EN GROS (vert) */}
                   {plan.originalPrice && (
-                    <div className="mb-2">
-                      <span className="text-xl text-silver-400 line-through">{plan.originalPrice} FCFA</span>
+                    <div className="mb-4">
+                      <p className="text-sm text-silver-600 mb-2">Vous économisez</p>
+                      <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent mb-2">
+                        {(parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))) / 1000}K
+                      </div>
+                      <p className="text-xl text-green-600 font-semibold">FCFA d'économie !</p>
                     </div>
                   )}
                   
-                  <div className="mb-3">
-                    <span className="text-5xl font-bold text-black">{plan.price}</span>
-                    <span className="text-xl text-silver-600 ml-2">FCFA</span>
+                  <div className="h-px bg-silver-300 my-6 max-w-xs mx-auto" />
+                  
+                  {/* Prix actuel EN PETIT (noir) */}
+                  <div className="mb-4">
+                    <p className="text-xs text-silver-500 mb-2">Votre prix aujourd'hui</p>
+                    <div className="inline-block bg-black text-white px-6 py-2 rounded-full">
+                      <span className="text-xl font-bold">{plan.price} FCFA</span>
+                    </div>
                   </div>
                   
+                  {/* Prix barré */}
                   {plan.originalPrice && (
-                    <div className="inline-block bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-3">
-                      ÉCONOMISEZ {parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))}K FCFA
+                    <div className="mb-4">
+                      <span className="text-sm text-silver-400 line-through">Au lieu de {plan.originalPrice} FCFA</span>
                     </div>
                   )}
                   
