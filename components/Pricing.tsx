@@ -4,10 +4,12 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Check, MessageCircle, Star } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Pricing = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const { t } = useLanguage()
   
   const whatsappNumber = '237676043968' // Format sans espaces ni +
 
@@ -92,7 +94,7 @@ const Pricing = () => {
   ]
 
   return (
-    <section id="tarifs" ref={ref} className="py-20 md:py-32 bg-gradient-to-b from-silver-100 to-white">
+    <section id="tarifs" ref={ref} className="py-20 md:py-32 bg-gradient-to-b from-silver-100 to-white dark:from-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -104,18 +106,18 @@ const Pricing = () => {
           <div className="mb-8 inline-block">
             <div className="bg-gradient-to-r from-red-500 via-orange-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg animate-pulse">
               <p className="text-sm md:text-base font-bold flex items-center gap-2">
-                ⚡ OFFRE DE LANCEMENT - 10 Places Restantes • Expire le 30 Nov 2026
+                {t('pricing.offer')}
               </p>
             </div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
-            Tarifs & Formules
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+            {t('pricing.title')}
           </h2>
-          <p className="text-lg md:text-xl text-silver-600 max-w-2xl mx-auto">
-            Prix de lancement exceptionnels • Économisez jusqu'à 180 000 FCFA
+          <p className="text-lg md:text-xl text-silver-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {t('pricing.subtitle')}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black mx-auto mt-6" />
+          <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black dark:to-white mx-auto mt-6" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -125,16 +127,16 @@ const Pricing = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`relative bg-white rounded-3xl shadow-xl overflow-hidden hover-lift ${
-                plan.popular ? 'ring-4 ring-black lg:scale-105' : ''
+              className={`relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden hover-lift ${
+                plan.popular ? 'ring-4 ring-black dark:ring-white lg:scale-105' : ''
               }`}
             >
               {/* Popular/Launch Badge */}
               {plan.badge && (
                 <div className={`absolute top-0 right-0 px-6 py-2 rounded-bl-2xl flex items-center gap-1 ${
-                  plan.popular ? 'bg-black text-white' : 'bg-gradient-to-r from-green-500 to-green-600 text-white'
+                  plan.popular ? 'bg-black dark:bg-white text-white dark:text-black' : 'bg-gradient-to-r from-green-500 to-green-600 text-white'
                 }`}>
-                  <Star className="w-4 h-4 fill-white" />
+                  <Star className="w-4 h-4 fill-current" />
                   <span className="text-sm font-bold">{plan.badge}</span>
                 </div>
               )}
@@ -142,26 +144,26 @@ const Pricing = () => {
               <div className="p-8">
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-black mb-2">{plan.name}</h3>
-                  <p className="text-sm text-silver-600 mb-6">{plan.subtitle}</p>
+                  <h3 className="text-2xl font-bold text-black dark:text-white mb-2">{plan.name}</h3>
+                  <p className="text-sm text-silver-600 dark:text-gray-400 mb-6">{plan.subtitle}</p>
                   
                   {/* PRIX AUJOURD'HUI EN GROS */}
                   <div className="mb-4">
-                    <p className="text-sm text-silver-600 mb-2">Prix aujourd'hui</p>
-                    <div className="text-5xl md:text-6xl font-bold text-black mb-2">
+                    <p className="text-sm text-silver-600 dark:text-gray-400 mb-2">{t('pricing.today')}</p>
+                    <div className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-2">
                       {plan.price}
                     </div>
-                    <p className="text-xl text-silver-600 font-semibold">FCFA</p>
+                    <p className="text-xl text-silver-600 dark:text-gray-400 font-semibold">FCFA</p>
                   </div>
                   
-                  <div className="h-px bg-silver-300 my-6 max-w-xs mx-auto" />
+                  <div className="h-px bg-silver-300 dark:bg-gray-700 my-6 max-w-xs mx-auto" />
                   
                   {/* ÉCONOMIE EN PETIT (badge) */}
                   {plan.originalPrice && (
                     <div className="mb-4">
                       <div className="inline-block bg-green-500 text-white px-4 py-2 rounded-full">
                         <span className="text-sm font-bold">
-                          Économisez {(parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))) / 1000}K FCFA
+                          {t('pricing.save')} {(parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))) / 1000}K FCFA
                         </span>
                       </div>
                     </div>
@@ -170,29 +172,29 @@ const Pricing = () => {
                   {/* Prix barré */}
                   {plan.originalPrice && (
                     <div className="mb-4">
-                      <span className="text-sm text-silver-400 line-through">Au lieu de {plan.originalPrice} FCFA</span>
+                      <span className="text-sm text-silver-400 dark:text-gray-500 line-through">{t('pricing.instead')} {plan.originalPrice} FCFA</span>
                     </div>
                   )}
                   
-                  <p className="text-silver-600 font-medium">{plan.description}</p>
+                  <p className="text-silver-600 dark:text-gray-400 font-medium">{plan.description}</p>
                 </div>
 
                 {/* Features */}
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 bg-black rounded-full flex items-center justify-center mt-0.5">
-                        <Check className="w-3 h-3 text-white" />
+                      <div className="flex-shrink-0 w-5 h-5 bg-black dark:bg-white rounded-full flex items-center justify-center mt-0.5">
+                        <Check className="w-3 h-3 text-white dark:text-black" />
                       </div>
-                      <span className="text-sm text-silver-700 leading-tight">{feature}</span>
+                      <span className="text-sm text-silver-700 dark:text-gray-300 leading-tight">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Delay */}
-                <div className="text-center mb-6 py-3 bg-silver-100 rounded-xl">
-                  <p className="text-sm text-silver-600">
-                    <span className="font-semibold text-black">Délai indicatif :</span> {plan.delay}
+                <div className="text-center mb-6 py-3 bg-silver-100 dark:bg-gray-700 rounded-xl">
+                  <p className="text-sm text-silver-600 dark:text-gray-300">
+                    <span className="font-semibold text-black dark:text-white">{t('pricing.delay')}</span> {plan.delay}
                   </p>
                 </div>
 
@@ -205,12 +207,12 @@ const Pricing = () => {
                   rel="noopener noreferrer"
                   className={`w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-black text-white hover:bg-silver-600'
-                      : 'bg-silver-200 text-black hover:bg-silver-300'
+                      ? 'bg-black dark:bg-white text-white dark:text-black hover:bg-silver-600 dark:hover:bg-gray-200'
+                      : 'bg-silver-200 dark:bg-gray-700 text-black dark:text-white hover:bg-silver-300 dark:hover:bg-gray-600'
                   }`}
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Choisir la formule {plan.name}
+                  {t('pricing.choose')} {plan.name}
                 </a>
               </div>
             </motion.div>
@@ -224,11 +226,10 @@ const Pricing = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 text-center max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-black to-silver-600 p-8 rounded-2xl text-white">
-            <h3 className="text-2xl font-bold mb-4">Besoin d'une solution personnalisée ?</h3>
-            <p className="text-silver-200 mb-6">
-              Contactez-moi pour discuter de votre projet spécifique. 
-              Je peux créer une offre sur mesure adaptée à vos besoins et votre budget.
+          <div className="bg-gradient-to-br from-black to-silver-600 dark:from-gray-700 dark:to-gray-800 p-8 rounded-2xl text-white">
+            <h3 className="text-2xl font-bold mb-4">{t('pricing.custom.title')}</h3>
+            <p className="text-silver-200 dark:text-gray-300 mb-6">
+              {t('pricing.custom.description')}
             </p>
             <a
               href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -236,10 +237,10 @@ const Pricing = () => {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-silver-200 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white dark:bg-gray-200 text-black px-8 py-3 rounded-full font-semibold hover:bg-silver-200 dark:hover:bg-gray-300 transition-all duration-300"
             >
               <MessageCircle className="w-5 h-5" />
-              Demander un devis personnalisé
+              {t('pricing.custom.cta')}
             </a>
           </div>
         </motion.div>

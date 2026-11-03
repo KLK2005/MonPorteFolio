@@ -4,10 +4,12 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ExternalLink, Info, Github, Globe } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Projects = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const { t } = useLanguage()
 
   const projects = [
     {
@@ -85,14 +87,14 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Projets Récents
+            {t('projects.title')}
           </h2>
           <p className="text-lg md:text-xl text-silver-300 max-w-3xl mx-auto mb-4">
-            Sites web modernes et performants pour entrepreneurs et entreprises
+            {t('projects.subtitle')}
           </p>
           <div className="inline-flex items-center gap-2 text-sm text-silver-400 bg-silver-600/20 px-4 py-2 rounded-full">
             <Info className="w-4 h-4" />
-            Projets de démonstration - Tous testés et fonctionnels
+            {t('projects.demo')}
           </div>
         </motion.div>
 
@@ -142,7 +144,7 @@ const Projects = () => {
                   className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors group/link w-full justify-center"
                 >
                   <Globe className="w-4 h-4" />
-                  Voir le projet
+                  {t('projects.view')}
                   <ExternalLink className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                 </a>
               </div>
@@ -159,7 +161,7 @@ const Projects = () => {
         >
           <div className="bg-silver-600/20 backdrop-blur-sm p-6 rounded-2xl border border-silver-600/30">
             <p className="text-silver-300 text-sm">
-              💼 Disponible pour vos projets • 📱 WhatsApp : +237 676 04 39 68
+              {t('projects.available')}
             </p>
           </div>
         </motion.div>
