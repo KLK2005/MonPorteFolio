@@ -3,10 +3,13 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ThemeLanguageToggle from './ThemeLanguageToggle'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,12 +20,12 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { href: '#accueil', label: 'Accueil' },
-    { href: '#apropos', label: 'À Propos' },
-    { href: '#services', label: 'Services' },
-    { href: '#projets', label: 'Projets' },
-    { href: '#tarifs', label: 'Tarifs' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#accueil', label: t('nav.home') },
+    { href: '#apropos', label: t('nav.about') },
+    { href: '#services', label: t('nav.services') },
+    { href: '#projets', label: t('nav.projects') },
+    { href: '#tarifs', label: t('nav.pricing') },
+    { href: '#contact', label: t('nav.contact') },
   ]
 
   return (
@@ -30,7 +33,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/90 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-black/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +47,7 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -54,16 +57,20 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <ThemeLanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeLanguageToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white p-2"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 

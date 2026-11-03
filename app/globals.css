@@ -53,3 +53,53 @@
   background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
   background-size: 1000px 100%;
 }
+
+
+/* Dark Mode Styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+.dark section {
+  @apply bg-gray-900;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+.dark .bg-silver-100 {
+  @apply bg-gray-800;
+}
+
+.dark .bg-silver-200 {
+  @apply bg-gray-700;
+}
+
+.dark .text-black {
+  @apply text-white;
+}
+
+.dark .text-silver-600 {
+  @apply text-gray-300;
+}
+
+.dark .text-silver-700 {
+  @apply text-gray-400;
+}
+
+.dark .border-gray-800 {
+  @apply border-gray-700;
+}
+
+.dark .bg-gradient-to-b {
+  @apply from-gray-900 to-gray-800;
+}
+
+.dark .bg-gradient-to-br {
+  @apply from-gray-800 to-gray-900;
+}
