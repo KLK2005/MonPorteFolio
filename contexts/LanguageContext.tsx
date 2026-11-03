@@ -26,16 +26,16 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Contact',
     
     // Hero
-    'hero.greeting': '👋 Junior Koloko — Développeur Web Full Stack Freelance',
-    'hero.title': 'Développeur Web Full Stack',
-    'hero.subtitle': 'Sites Modernes & Performants',
+    'hero.greeting': 'Disponible pour vos projets',
+    'hero.title': 'Junior Koloko',
+    'hero.subtitle': 'Développeur Web Full Stack',
     'hero.description': 'Je crée des sites web professionnels pour entrepreneurs et PME au Cameroun. E-commerce, sites vitrines et applications web sur mesure.',
     'hero.cta': 'Démarrer Votre Projet',
-    'hero.portfolio': 'Voir Mon Portfolio',
+    'hero.portfolio': 'Voir Mes Projets',
     'hero.whatsapp.message': 'Bonjour, je souhaite discuter de mon projet web.',
-    'hero.feature.code': 'Code de qualité',
-    'hero.feature.design': 'Design moderne',
-    'hero.feature.speed': 'Livraison rapide',
+    'hero.stats.projects': 'Projets réalisés',
+    'hero.stats.clients': 'Clients satisfaits',
+    'hero.stats.experience': 'Ans d\'expérience',
     
     // About
     'about.title': 'À Propos de Moi',
@@ -93,16 +93,16 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Contact',
     
     // Hero
-    'hero.greeting': '👋 Junior Koloko — Freelance Full Stack Web Developer',
-    'hero.title': 'Full Stack Web Developer',
-    'hero.subtitle': 'Modern & High-Performance Websites',
+    'hero.greeting': 'Available for projects',
+    'hero.title': 'Junior Koloko',
+    'hero.subtitle': 'Full Stack Web Developer',
     'hero.description': 'I create professional websites for entrepreneurs and SMEs in Cameroon. E-commerce, showcase sites and custom web applications.',
     'hero.cta': 'Start Your Project',
-    'hero.portfolio': 'View My Portfolio',
+    'hero.portfolio': 'View My Projects',
     'hero.whatsapp.message': 'Hello, I would like to discuss my web project.',
-    'hero.feature.code': 'Quality code',
-    'hero.feature.design': 'Modern design',
-    'hero.feature.speed': 'Fast delivery',
+    'hero.stats.projects': 'Completed projects',
+    'hero.stats.clients': 'Satisfied clients',
+    'hero.stats.experience': 'Years of experience',
     
     // About
     'about.title': 'About Me',
