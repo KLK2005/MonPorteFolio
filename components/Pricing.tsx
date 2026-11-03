@@ -14,8 +14,8 @@ const Pricing = () => {
   const plans = [
     {
       name: 'LANDING PAGE',
-      price: '35 000',
-      originalPrice: '75 000',
+      price: '60 000',
+      originalPrice: '100 000',
       subtitle: 'Pour formations, événements et services',
       description: 'Page de conversion optimisée',
       features: [
@@ -39,7 +39,7 @@ const Pricing = () => {
     },
     {
       name: 'E-COMMERCE',
-      price: '75 000',
+      price: '125 000',
       originalPrice: '200 000',
       subtitle: 'Pour boutiques et commerçants',
       description: 'Boutique en ligne complète',
@@ -65,8 +65,8 @@ const Pricing = () => {
     },
     {
       name: 'SITE PRO',
-      price: '120 000',
-      originalPrice: '300 000',
+      price: '200 000',
+      originalPrice: '380 000',
       subtitle: 'Pour cabinets et entreprises',
       description: 'Site professionnel premium',
       features: [
@@ -145,26 +145,27 @@ const Pricing = () => {
                   <h3 className="text-2xl font-bold text-black mb-2">{plan.name}</h3>
                   <p className="text-sm text-silver-600 mb-6">{plan.subtitle}</p>
                   
-                  {/* ÉCONOMIE EN GROS (vert) */}
-                  {plan.originalPrice && (
-                    <div className="mb-4">
-                      <p className="text-sm text-silver-600 mb-2">Vous économisez</p>
-                      <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent mb-2">
-                        {(parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))) / 1000}K
-                      </div>
-                      <p className="text-xl text-green-600 font-semibold">FCFA d'économie !</p>
+                  {/* PRIX AUJOURD'HUI EN GROS */}
+                  <div className="mb-4">
+                    <p className="text-sm text-silver-600 mb-2">Prix aujourd'hui</p>
+                    <div className="text-5xl md:text-6xl font-bold text-black mb-2">
+                      {plan.price}
                     </div>
-                  )}
+                    <p className="text-xl text-silver-600 font-semibold">FCFA</p>
+                  </div>
                   
                   <div className="h-px bg-silver-300 my-6 max-w-xs mx-auto" />
                   
-                  {/* Prix actuel EN PETIT (noir) */}
-                  <div className="mb-4">
-                    <p className="text-xs text-silver-500 mb-2">Votre prix aujourd'hui</p>
-                    <div className="inline-block bg-black text-white px-6 py-2 rounded-full">
-                      <span className="text-xl font-bold">{plan.price} FCFA</span>
+                  {/* ÉCONOMIE EN PETIT (badge) */}
+                  {plan.originalPrice && (
+                    <div className="mb-4">
+                      <div className="inline-block bg-green-500 text-white px-4 py-2 rounded-full">
+                        <span className="text-sm font-bold">
+                          Économisez {(parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))) / 1000}K FCFA
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   
                   {/* Prix barré */}
                   {plan.originalPrice && (
