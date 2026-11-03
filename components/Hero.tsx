@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Code2, Palette, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 const Hero = () => {
   const whatsappNumber = '237676043968' // Format sans espaces ni +
@@ -16,87 +17,126 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Texte à gauche */}
             <motion.div
-              className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left"
             >
-              👋 Junior Koloko — Développeur Web Full Stack Freelance
-            </motion.div>
-
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Développeur Web Full Stack
-              <span className="block bg-gradient-to-r from-silver-200 via-white to-silver-200 bg-clip-text text-transparent">
-                Sites Modernes & Performants
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-lg sm:text-xl md:text-2xl text-silver-200 mb-8 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              Je crée des sites web professionnels pour entrepreneurs et PME au Cameroun. 
-              E-commerce, sites vitrines et applications web sur mesure.
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mb-12"
-          >
-            <a
-              href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-silver-200 transition-all duration-300 hover:scale-105 shadow-2xl"
-            >
-              Discutons de votre projet
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </motion.div>
-
-          {/* Features Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
-          >
-            {[
-              { icon: Code2, title: 'Code de qualité', desc: 'Développement propre et performant' },
-              { icon: Palette, title: 'Design moderne', desc: 'Interfaces élégantes et intuitives' },
-              { icon: Zap, title: 'Livraison rapide', desc: 'Projets livrés dans les délais' },
-            ].map((feature, index) => (
               <motion.div
-                key={feature.title}
+                className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9 + index * 0.1 }}
-                className="glass-effect p-6 rounded-2xl hover-lift"
+                transition={{ delay: 0.1 }}
               >
-                <feature.icon className="w-12 h-12 text-white mx-auto mb-4" />
-                <h3 className="text-white font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-silver-200 text-sm">{feature.desc}</p>
+                👋 Junior Koloko — Développeur Web Full Stack Freelance
               </motion.div>
-            ))}
-          </motion.div>
+
+              <motion.h1 
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Développeur Web Full Stack
+                <span className="block bg-gradient-to-r from-silver-200 via-white to-silver-200 bg-clip-text text-transparent">
+                  Sites Modernes & Performants
+                </span>
+              </motion.h1>
+              
+              <motion.p 
+                className="text-lg sm:text-xl text-silver-200 mb-8 max-w-2xl mx-auto lg:mx-0"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                Je crée des sites web professionnels pour entrepreneurs et PME au Cameroun. 
+                E-commerce, sites vitrines et applications web sur mesure.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mb-8"
+              >
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-silver-200 transition-all duration-300 hover:scale-105 shadow-2xl"
+                >
+                  Discutons de votre projet
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </motion.div>
+
+              {/* Features Grid */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="grid grid-cols-3 gap-4 mt-12"
+              >
+                {[
+                  { icon: Code2, title: 'Code de qualité' },
+                  { icon: Palette, title: 'Design moderne' },
+                  { icon: Zap, title: 'Livraison rapide' },
+                ].map((feature, index) => (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9 + index * 0.1 }}
+                    className="glass-effect p-4 rounded-xl hover-lift text-center"
+                  >
+                    <feature.icon className="w-8 h-8 text-white mx-auto mb-2" />
+                    <p className="text-white text-xs font-semibold">{feature.title}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Photo à droite */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative w-full max-w-lg mx-auto">
+                {/* Glow effect behind photo */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-silver-300/30 rounded-full blur-3xl"></div>
+                
+                {/* Photo */}
+                <div className="relative z-10">
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Junior Koloko - Développeur Web Full Stack"
+                    width={500}
+                    height={500}
+                    className="rounded-full shadow-2xl border-4 border-white/20"
+                    priority
+                  />
+                </div>
+
+                {/* Decorative elements */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute -top-10 -right-10 w-32 h-32 border-4 border-white/10 rounded-full"
+                />
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="absolute -bottom-10 -left-10 w-40 h-40 border-4 border-white/10 rounded-full"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 

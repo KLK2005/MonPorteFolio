@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Mail, MessageCircle, Linkedin, Send } from 'lucide-react'
+import { Mail, MessageCircle, Linkedin, Send, Github } from 'lucide-react'
 
 const Contact = () => {
   const ref = useRef(null)
@@ -16,6 +16,7 @@ const Contact = () => {
   // Liens réseaux sociaux
   const socialLinks = {
     linkedin: 'https://www.linkedin.com/in/junior-koloko-592841319/',
+    github: 'https://github.com/KLK2005',
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -101,6 +102,15 @@ const Contact = () => {
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-5 h-5" />
                   </a>
                 </div>
               </div>

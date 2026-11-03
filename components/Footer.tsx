@@ -1,12 +1,13 @@
 'use client'
 
-import { Code2, MessageCircle, Mail, Linkedin } from 'lucide-react'
+import { Code2, MessageCircle, Mail, Linkedin, Github } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const whatsappNumber = '237676043968'
   const email = 'juniorkoloko4@gmail.com'
   const linkedin = 'https://www.linkedin.com/in/junior-koloko-592841319/'
+  const github = 'https://github.com/KLK2005'
 
   return (
     <footer className="bg-black text-white py-12">
@@ -93,6 +94,15 @@ const Footer = () => {
                 >
                   <Linkedin className="w-4 h-4" />
                   <span>LinkedIn</span>
+                </a>
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors text-sm"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>GitHub</span>
                 </a>
               </div>
             </div>

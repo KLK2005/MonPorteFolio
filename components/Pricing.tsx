@@ -145,19 +145,20 @@ const Pricing = () => {
                   <h3 className="text-2xl font-bold text-black mb-2">{plan.name}</h3>
                   <p className="text-sm text-silver-600 mb-6">{plan.subtitle}</p>
                   
-                  <div className="mb-2">
-                    {plan.originalPrice && (
-                      <div className="mb-2">
-                        <span className="text-2xl text-silver-400 line-through">{plan.originalPrice} FCFA</span>
-                      </div>
-                    )}
+                  {plan.originalPrice && (
+                    <div className="mb-2">
+                      <span className="text-xl text-silver-400 line-through">{plan.originalPrice} FCFA</span>
+                    </div>
+                  )}
+                  
+                  <div className="mb-3">
                     <span className="text-5xl font-bold text-black">{plan.price}</span>
                     <span className="text-xl text-silver-600 ml-2">FCFA</span>
                   </div>
                   
                   {plan.originalPrice && (
-                    <div className="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
-                      ÉCONOMISEZ {parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))} FCFA
+                    <div className="inline-block bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-3">
+                      ÉCONOMISEZ {parseInt(plan.originalPrice.replace(/\s/g, '')) - parseInt(plan.price.replace(/\s/g, ''))}K FCFA
                     </div>
                   )}
                   

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Globe, Megaphone, ShoppingCart, Building2, RefreshCw } from 'lucide-react'
+import { Globe, Megaphone, ShoppingCart, Building2, RefreshCw, Layout } from 'lucide-react'
 
 const Services = () => {
   const ref = useRef(null)
@@ -27,6 +27,12 @@ const Services = () => {
       title: 'Boutiques en Ligne',
       description: 'Solutions e-commerce complètes pour vendre vos produits en ligne.',
       features: ['Catalogue produits', 'Panier d\'achat', 'Commande WhatsApp', 'Gestion simple']
+    },
+    {
+      icon: Layout,
+      title: 'Applications Web',
+      description: 'Applications web sur mesure pour automatiser et digitaliser vos processus métier.',
+      features: ['Interfaces interactives', 'Tableaux de bord', 'Gestion de données', 'Automatisation']
     },
     {
       icon: Building2,

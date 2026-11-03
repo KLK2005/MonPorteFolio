@@ -29,6 +29,15 @@ const Projects = () => {
       demoLive: true
     },
     {
+      title: 'GestiPro',
+      category: 'Application Web',
+      description: 'Application de gestion commerciale pour PME avec tableau de bord',
+      tags: ['Dashboard', 'Gestion', 'B2B'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      link: '/projets/application-web',
+      demoLive: true
+    },
+    {
       title: 'CamBusiness Solutions',
       category: 'Site Corporate',
       description: 'Site professionnel B2B pour cabinet de conseil en entreprise',
