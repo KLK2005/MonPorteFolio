@@ -124,7 +124,7 @@ const Contact = () => {
                     aria-label="GitHub"
                   >
                     <Image 
-                      src="/images/icons8_github_30px.png" 
+                      src="/images/icons8_github_48px.png" 
                       alt="GitHub" 
                       width={24} 
                       height={24}

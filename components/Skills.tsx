@@ -4,45 +4,47 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Code2, Palette, Database, Globe, Smartphone, Zap } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Skills = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const { t } = useLanguage()
 
   const skillCategories = [
     {
       icon: Code2,
-      title: 'Front-End',
+      title: t('skills.frontend'),
       color: 'from-blue-500 to-cyan-500',
       skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5/CSS3', 'Tailwind CSS', 'Framer Motion']
     },
     {
       icon: Database,
-      title: 'Back-End',
+      title: t('skills.backend'),
       color: 'from-green-500 to-emerald-500',
       skills: ['Node.js', 'Express', 'Laravel', 'API REST', 'MongoDB', 'PostgreSQL', 'Firebase', 'Authentication']
     },
     {
       icon: Smartphone,
-      title: 'Responsive',
+      title: t('skills.responsive'),
       color: 'from-purple-500 to-pink-500',
       skills: ['Mobile First', 'Progressive Web Apps', 'Cross-Browser', 'Performance', 'Accessibilité']
     },
     {
       icon: Palette,
-      title: 'Design & UI/UX',
+      title: t('skills.design'),
       color: 'from-orange-500 to-red-500',
       skills: ['Figma', 'UI Design', 'UX Research', 'Prototypage', 'Design Systems']
     },
     {
       icon: Globe,
-      title: 'Déploiement',
+      title: t('skills.deployment'),
       color: 'from-indigo-500 to-blue-500',
       skills: ['Vercel', 'Netlify', 'GitHub', 'Git', 'CI/CD', 'Domain Management']
     },
     {
       icon: Zap,
-      title: 'Optimisation',
+      title: t('skills.optimization'),
       color: 'from-yellow-500 to-orange-500',
       skills: ['SEO', 'Performance Web', 'Core Web Vitals', 'Analytics', 'Lighthouse', 'GTmetrix']
     }
@@ -58,10 +60,10 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-            Compétences Techniques
+            {t('skills.title')}
           </h2>
           <p className="text-lg md:text-xl text-silver-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Technologies et outils que je maîtrise pour créer des solutions web performantes
+            {t('skills.subtitle')}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black dark:to-white mx-auto mt-6" />
         </motion.div>
@@ -103,10 +105,10 @@ const Skills = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { number: '3+', label: 'Années d\'expérience' },
-            { number: '15+', label: 'Projets réalisés' },
-            { number: '100%', label: 'Clients satisfaits' },
-            { number: '7j', label: 'Livraison rapide' }
+            { number: '3+', label: t('skills.stats.experience') },
+            { number: '15+', label: t('skills.stats.projects') },
+            { number: '100%', label: t('skills.stats.satisfaction') },
+            { number: '7j', label: t('skills.stats.delivery') }
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
