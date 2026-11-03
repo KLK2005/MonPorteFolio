@@ -2,6 +2,7 @@
 
 import { Code2, Mail } from 'lucide-react'
 import Image from 'next/image'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -9,9 +10,10 @@ const Footer = () => {
   const email = 'juniorkoloko4@gmail.com'
   const linkedin = 'https://www.linkedin.com/in/junior-koloko-592841319/'
   const github = 'https://github.com/KLK2005'
+  const { t } = useLanguage()
 
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="bg-black dark:bg-gray-950 text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer Content */}
@@ -25,23 +27,23 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Développeur Web Full Stack professionnel à Douala.
+                {t('footer.description')}
               </p>
               <p className="text-gray-500 text-xs">
-                📍 Douala, Cameroun
+                📍 {t('footer.location')}
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Navigation</h3>
+              <h3 className="text-lg font-bold mb-4">{t('footer.navigation')}</h3>
               <ul className="space-y-2">
                 {[
-                  { label: 'Accueil', href: '#accueil' },
-                  { label: 'À Propos', href: '#apropos' },
-                  { label: 'Projets', href: '#projets' },
-                  { label: 'Tarifs', href: '#tarifs' },
-                  { label: 'Contact', href: '#contact' }
+                  { label: t('nav.home'), href: '#accueil' },
+                  { label: t('nav.about'), href: '#apropos' },
+                  { label: t('nav.projects'), href: '#projets' },
+                  { label: t('nav.pricing'), href: '#tarifs' },
+                  { label: t('nav.contact'), href: '#contact' }
                 ].map((link) => (
                   <li key={link.href}>
                     <a
@@ -57,7 +59,7 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Services</h3>
+              <h3 className="text-lg font-bold mb-4">{t('footer.services.title')}</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Sites E-commerce</li>
                 <li>Landing Pages</li>
@@ -69,7 +71,7 @@ const Footer = () => {
 
             {/* Contact rapide */}
             <div>
-              <h3 className="text-lg font-bold mb-4">Contact Rapide</h3>
+              <h3 className="text-lg font-bold mb-4">{t('footer.quick.contact')}</h3>
               <div className="space-y-3">
                 <a
                   href={`https://wa.me/${whatsappNumber}`}
@@ -84,14 +86,14 @@ const Footer = () => {
                     height={16}
                     className="object-contain"
                   />
-                  <span>WhatsApp</span>
+                  <span>{t('contact.whatsapp')}</span>
                 </a>
                 <a
                   href={`mailto:${email}`}
                   className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>Email</span>
+                  <span>{t('contact.email')}</span>
                 </a>
                 <a
                   href={linkedin}
@@ -106,7 +108,7 @@ const Footer = () => {
                     height={16}
                     className="object-contain"
                   />
-                  <span>LinkedIn</span>
+                  <span>{t('contact.linkedin')}</span>
                 </a>
                 <a
                   href={github}
@@ -131,7 +133,7 @@ const Footer = () => {
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-500 text-sm">
-                © {currentYear} Junior Koloko • Développeur Web Full Stack
+                © {currentYear} Junior Koloko • {t('footer.copyright')}
               </p>
             </div>
           </div>
