@@ -17,6 +17,8 @@ const translations: Record<Language, Record<string, string>> = {
   fr: {
     // Navigation
     'nav.home': 'Accueil',
+    'nav.skills': 'Compétences',
+    'nav.experience': 'Expériences',
     'nav.about': 'À Propos',
     'nav.services': 'Services',
     'nav.projects': 'Projets',
@@ -27,22 +29,21 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.greeting': '👋 Junior Koloko — Développeur Web Full Stack Freelance',
     'hero.title': 'Développeur Web Full Stack',
     'hero.subtitle': 'Sites Modernes & Performants',
-    'hero.description': 'Je crée des sites web professionnels qui transforment votre présence en ligne et génèrent de vrais résultats pour votre business.',
+    'hero.description': 'Je crée des sites web professionnels pour entrepreneurs et PME au Cameroun. E-commerce, sites vitrines et applications web sur mesure.',
     'hero.cta': 'Démarrer Votre Projet',
     'hero.portfolio': 'Voir Mon Portfolio',
+    'hero.whatsapp.message': 'Bonjour, je souhaite discuter de mon projet web.',
+    'hero.feature.code': 'Code de qualité',
+    'hero.feature.design': 'Design moderne',
+    'hero.feature.speed': 'Livraison rapide',
     
     // About
-    'about.title': 'À Propos',
-    'about.subtitle': 'Développeur web Full Stack basé à Douala, Cameroun',
-    'about.description': 'Passionné par la création de sites web qui font la différence. Je transforme vos idées en solutions digitales modernes et performantes.',
-    'about.clients': '+15 Clients Satisfaits',
-    'about.projects': 'Projets Réalisés',
-    'about.experience': 'Ans d\'Expérience',
-    'about.availability': 'Disponible',
+    'about.title': 'À Propos de Moi',
+    'about.subtitle': 'Développeur passionné au service de votre réussite digitale',
     
     // Services
-    'services.title': 'Services',
-    'services.subtitle': 'Solutions web adaptées à vos besoins',
+    'services.title': 'Mes Services',
+    'services.subtitle': 'Des solutions web adaptées à vos besoins et votre budget',
     
     // Projects
     'projects.title': 'Projets Récents',
@@ -55,7 +56,9 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.title': 'Tarifs & Formules',
     'pricing.subtitle': 'Prix de lancement exceptionnels • Économisez jusqu\'à 180 000 FCFA',
     'pricing.offer': '⚡ OFFRE DE LANCEMENT - 10 Places Restantes • Expire le 30 Nov 2026',
-    'pricing.save': 'ÉCONOMISEZ',
+    'pricing.save': 'Vous économisez',
+    'pricing.today': 'Prix aujourd\'hui',
+    'pricing.instead': 'Au lieu de',
     'pricing.delay': 'Délai indicatif :',
     'pricing.choose': 'Choisir la formule',
     'pricing.custom.title': 'Besoin d\'une solution personnalisée ?',
@@ -64,12 +67,11 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Contact
     'contact.title': 'Contactez-Moi',
-    'contact.subtitle': 'Transformons ensemble votre vision en réalité digitale',
-    'contact.whatsapp': 'Discutons Sur WhatsApp',
-    'contact.linkedin': 'Connectons-Nous',
-    'contact.email': 'Envoyez Un Email',
+    'contact.subtitle': 'Parlons de votre projet et obtenez un devis gratuit',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.linkedin': 'LinkedIn',
+    'contact.email': 'Email',
     'contact.location': 'Douala, Cameroun',
-    'contact.availability': 'Disponible pour projets',
     
     // Footer
     'footer.description': 'Développeur Web Full Stack professionnel à Douala.',
@@ -82,6 +84,8 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
+    'nav.skills': 'Skills',
+    'nav.experience': 'Experience',
     'nav.about': 'About',
     'nav.services': 'Services',
     'nav.projects': 'Projects',
@@ -92,22 +96,21 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.greeting': '👋 Junior Koloko — Freelance Full Stack Web Developer',
     'hero.title': 'Full Stack Web Developer',
     'hero.subtitle': 'Modern & High-Performance Websites',
-    'hero.description': 'I create professional websites that transform your online presence and generate real results for your business.',
+    'hero.description': 'I create professional websites for entrepreneurs and SMEs in Cameroon. E-commerce, showcase sites and custom web applications.',
     'hero.cta': 'Start Your Project',
     'hero.portfolio': 'View My Portfolio',
+    'hero.whatsapp.message': 'Hello, I would like to discuss my web project.',
+    'hero.feature.code': 'Quality code',
+    'hero.feature.design': 'Modern design',
+    'hero.feature.speed': 'Fast delivery',
     
     // About
     'about.title': 'About Me',
-    'about.subtitle': 'Full Stack web developer based in Douala, Cameroon',
-    'about.description': 'Passionate about creating websites that make a difference. I transform your ideas into modern and efficient digital solutions.',
-    'about.clients': '+15 Happy Clients',
-    'about.projects': 'Projects Completed',
-    'about.experience': 'Years of Experience',
-    'about.availability': 'Available',
+    'about.subtitle': 'Passionate developer at the service of your digital success',
     
     // Services
-    'services.title': 'Services',
-    'services.subtitle': 'Web solutions tailored to your needs',
+    'services.title': 'My Services',
+    'services.subtitle': 'Web solutions tailored to your needs and budget',
     
     // Projects
     'projects.title': 'Recent Projects',
@@ -120,7 +123,9 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.title': 'Pricing & Packages',
     'pricing.subtitle': 'Exceptional launch prices • Save up to 180,000 FCFA',
     'pricing.offer': '⚡ LAUNCH OFFER - 10 Spots Remaining • Expires Nov 30, 2026',
-    'pricing.save': 'SAVE',
+    'pricing.save': 'You save',
+    'pricing.today': 'Price today',
+    'pricing.instead': 'Instead of',
     'pricing.delay': 'Estimated delivery:',
     'pricing.choose': 'Choose package',
     'pricing.custom.title': 'Need a custom solution?',
@@ -129,12 +134,11 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Contact
     'contact.title': 'Contact Me',
-    'contact.subtitle': 'Let\'s transform your vision into digital reality together',
-    'contact.whatsapp': 'Chat on WhatsApp',
-    'contact.linkedin': 'Let\'s Connect',
-    'contact.email': 'Send an Email',
+    'contact.subtitle': 'Let\'s talk about your project and get a free quote',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.linkedin': 'LinkedIn',
+    'contact.email': 'Email',
     'contact.location': 'Douala, Cameroon',
-    'contact.availability': 'Available for projects',
     
     // Footer
     'footer.description': 'Professional Full Stack Web Developer in Douala.',

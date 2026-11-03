@@ -21,8 +21,8 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '#accueil', label: t('nav.home') },
-    { href: '#competences', label: 'Compétences' },
-    { href: '#experiences', label: 'Expériences' },
+    { href: '#competences', label: t('nav.skills') },
+    { href: '#experiences', label: t('nav.experience') },
     { href: '#services', label: t('nav.services') },
     { href: '#projets', label: t('nav.projects') },
     { href: '#apropos', label: t('nav.about') },
