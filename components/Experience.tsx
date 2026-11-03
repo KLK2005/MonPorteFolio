@@ -44,12 +44,12 @@ const Experience = () => {
       icon: GraduationCap,
       period: '2021 - 2022',
       title: 'Formation Développement Web',
-      company: 'Auto-formation & Certifications',
+      company: 'Auto-formation intensive',
       location: 'En ligne',
       description: 'Formation intensive en développement web moderne',
       achievements: [
         'Maîtrise de React, Next.js, TypeScript',
-        'Certifications en ligne (Udemy, freeCodeCamp)',
+        'Apprentissage continu via tutoriels et documentation',
         'Projets personnels et portfolio',
         'Veille technologique continue'
       ],

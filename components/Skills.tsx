@@ -20,7 +20,7 @@ const Skills = () => {
       icon: Database,
       title: 'Back-End',
       color: 'from-green-500 to-emerald-500',
-      skills: ['Node.js', 'Express', 'API REST', 'MongoDB', 'PostgreSQL', 'Firebase', 'Authentication']
+      skills: ['Node.js', 'Express', 'Laravel', 'API REST', 'MongoDB', 'PostgreSQL', 'Firebase', 'Authentication']
     },
     {
       icon: Smartphone,
@@ -32,7 +32,7 @@ const Skills = () => {
       icon: Palette,
       title: 'Design & UI/UX',
       color: 'from-orange-500 to-red-500',
-      skills: ['Figma', 'Adobe XD', 'UI Design', 'UX Research', 'Prototypage', 'Design Systems']
+      skills: ['Figma', 'UI Design', 'UX Research', 'Prototypage', 'Design Systems']
     },
     {
       icon: Globe,
