@@ -1,6 +1,7 @@
 'use client'
 
-import { Code2, MessageCircle, Mail, Linkedin, Github } from 'lucide-react'
+import { Code2, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -76,7 +77,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-400 hover:text-green-400 transition-colors text-sm"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <Image 
+                    src="/images/icons8_whatsapp_48px_1.png" 
+                    alt="WhatsApp" 
+                    width={16} 
+                    height={16}
+                    className="object-contain"
+                  />
                   <span>WhatsApp</span>
                 </a>
                 <a
@@ -92,7 +99,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <Image 
+                    src="/images/icons8_linkedin_48px.png" 
+                    alt="LinkedIn" 
+                    width={16} 
+                    height={16}
+                    className="object-contain"
+                  />
                   <span>LinkedIn</span>
                 </a>
                 <a
@@ -101,7 +114,13 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors text-sm"
                 >
-                  <Github className="w-4 h-4" />
+                  <Image 
+                    src="/images/icons8_github_30px.png" 
+                    alt="GitHub" 
+                    width={16} 
+                    height={16}
+                    className="object-contain"
+                  />
                   <span>GitHub</span>
                 </a>
               </div>

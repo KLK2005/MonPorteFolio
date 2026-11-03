@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Mail, MessageCircle, Linkedin, Send, Github } from 'lucide-react'
+import { Mail, Send } from 'lucide-react'
+import Image from 'next/image'
 
 const Contact = () => {
   const ref = useRef(null)
@@ -68,7 +69,13 @@ const Contact = () => {
                   className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <MessageCircle className="w-6 h-6" />
+                    <Image 
+                      src="/images/icons8_whatsapp_48px_1.png" 
+                      alt="WhatsApp" 
+                      width={28} 
+                      height={28}
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold">WhatsApp</p>
@@ -101,7 +108,13 @@ const Contact = () => {
                     className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Image 
+                      src="/images/icons8_linkedin_48px.png" 
+                      alt="LinkedIn" 
+                      width={24} 
+                      height={24}
+                      className="object-contain"
+                    />
                   </a>
                   <a
                     href={socialLinks.github}
@@ -110,7 +123,13 @@ const Contact = () => {
                     className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110"
                     aria-label="GitHub"
                   >
-                    <Github className="w-5 h-5" />
+                    <Image 
+                      src="/images/icons8_github_30px.png" 
+                      alt="GitHub" 
+                      width={24} 
+                      height={24}
+                      className="object-contain"
+                    />
                   </a>
                 </div>
               </div>
