@@ -21,9 +21,11 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '#accueil', label: t('nav.home') },
-    { href: '#apropos', label: t('nav.about') },
+    { href: '#competences', label: 'Compétences' },
+    { href: '#experiences', label: 'Expériences' },
     { href: '#services', label: t('nav.services') },
     { href: '#projets', label: t('nav.projects') },
+    { href: '#apropos', label: t('nav.about') },
     { href: '#tarifs', label: t('nav.pricing') },
     { href: '#contact', label: t('nav.contact') },
   ]

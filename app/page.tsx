@@ -1,7 +1,9 @@
 import Hero from '@/components/Hero'
-import About from '@/components/About'
+import Skills from '@/components/Skills'
+import Experience from '@/components/Experience'
 import Services from '@/components/Services'
 import Projects from '@/components/Projects'
+import About from '@/components/About'
 import Pricing from '@/components/Pricing'
 import Contact from '@/components/Contact'
 import Navbar from '@/components/Navbar'
@@ -12,6 +14,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <Skills />
+      <Experience />
       <Services />
       <Projects />
       <About />
