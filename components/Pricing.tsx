@@ -15,11 +15,11 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: 'LANDING PAGE',
+      name: t('pricing.landing.name'),
       price: '60 000',
       originalPrice: '100 000',
-      subtitle: 'Pour formations, événements et services',
-      description: 'Page de conversion optimisée',
+      subtitle: t('pricing.landing.subtitle'),
+      description: t('pricing.landing.desc'),
       features: [
         'Design personnalisé moderne',
         'Page unique ultra-optimisée',
@@ -37,14 +37,14 @@ const Pricing = () => {
       delay: '7 jours',
       popular: false,
       formule: 'Landing Page',
-      badge: 'OFFRE LANCEMENT'
+      badge: t('pricing.landing.badge')
     },
     {
-      name: 'E-COMMERCE',
+      name: t('pricing.ecommerce.name'),
       price: '125 000',
       originalPrice: '200 000',
-      subtitle: 'Pour boutiques et commerçants',
-      description: 'Boutique en ligne complète',
+      subtitle: t('pricing.ecommerce.subtitle'),
+      description: t('pricing.ecommerce.desc'),
       features: [
         'Boutique en ligne fonctionnelle',
         'Catalogue produits illimité',
@@ -63,14 +63,14 @@ const Pricing = () => {
       delay: '10-14 jours',
       popular: true,
       formule: 'E-commerce',
-      badge: 'PLUS POPULAIRE'
+      badge: t('pricing.ecommerce.badge')
     },
     {
-      name: 'SITE PRO',
+      name: t('pricing.pro.name'),
       price: '200 000',
       originalPrice: '380 000',
-      subtitle: 'Pour cabinets et entreprises',
-      description: 'Site professionnel premium',
+      subtitle: t('pricing.pro.subtitle'),
+      description: t('pricing.pro.desc'),
       features: [
         'Site multi-pages complet',
         'Design haut de gamme',
@@ -89,7 +89,7 @@ const Pricing = () => {
       delay: '14 jours',
       popular: false,
       formule: 'Site Pro',
-      badge: 'PRESTIGE'
+      badge: t('pricing.pro.badge')
     }
   ]
 
