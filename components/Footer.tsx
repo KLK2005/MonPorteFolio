@@ -61,11 +61,11 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold mb-4">{t('footer.services.title')}</h3>
               <ul className="space-y-2 text-sm text-stone-soft">
-                <li>Sites E-commerce</li>
-                <li>Landing Pages</li>
-                <li>Sites Vitrines</li>
-                <li>Applications Web</li>
-                <li>Refonte de Sites</li>
+                <li>{t('footer.services.ecommerce')}</li>
+                <li>{t('footer.services.landing')}</li>
+                <li>{t('footer.services.showcase')}</li>
+                <li>{t('footer.services.webapp')}</li>
+                <li>{t('footer.services.redesign')}</li>
               </ul>
             </div>
 
