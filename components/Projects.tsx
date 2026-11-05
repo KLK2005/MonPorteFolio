@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: 'Afrik Style',
       category: 'E-commerce',
-      description: 'Boutique en ligne de mode africaine avec paiement WhatsApp Business',
+      description: t('projects.afrikstyle.desc'),
       tags: ['E-commerce', 'Mode', 'Mobile-First'],
       image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop',
       link: '/projets/boutique-mode',
@@ -24,7 +24,7 @@ const Projects = () => {
     {
       title: 'Digital Academy',
       category: 'Landing Page',
-      description: 'Page de conversion optimisée pour école de formation en ligne',
+      description: t('projects.digitalacademy.desc'),
       tags: ['Conversion', 'Formation', 'Mobile'],
       image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
       link: '/projets/landing-page',
@@ -33,7 +33,7 @@ const Projects = () => {
     {
       title: 'GestiPro',
       category: 'Application Web',
-      description: 'Application de gestion commerciale pour PME avec tableau de bord',
+      description: t('projects.gestipro.desc'),
       tags: ['Dashboard', 'Gestion', 'B2B'],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
       link: '/projets/application-web',
@@ -42,7 +42,7 @@ const Projects = () => {
     {
       title: 'CamBusiness Solutions',
       category: 'Site Corporate',
-      description: 'Site professionnel B2B pour cabinet de conseil en entreprise',
+      description: t('projects.cambusiness.desc'),
       tags: ['Corporate', 'B2B', 'Multi-pages'],
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
       link: '/projets/entreprise',
@@ -51,7 +51,7 @@ const Projects = () => {
     {
       title: 'Saveurs du Cameroun',
       category: 'Restaurant',
-      description: 'Site vitrine pour restaurant avec menu interactif et réservations',
+      description: t('projects.saveurs.desc'),
       tags: ['Vitrine', 'Restaurant', 'Cameroun'],
       image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop',
       link: '/projets/restaurant',
@@ -60,7 +60,7 @@ const Projects = () => {
     {
       title: 'Cabinet FOTSO & Associés',
       category: 'Site Juridique',
-      description: 'Site professionnel pour cabinet d\'avocats avec prise de rendez-vous',
+      description: t('projects.fotso.desc'),
       tags: ['Juridique', 'Professionnel', 'Services'],
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop',
       link: '/projets/cabinet-avocat',
@@ -69,7 +69,7 @@ const Projects = () => {
     {
       title: 'CAM Construction',
       category: 'Refonte',
-      description: 'Refonte complète de site : +320% de trafic en 3 mois',
+      description: t('projects.camconstruction.desc'),
       tags: ['Refonte', 'Performance', 'SEO'],
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop',
       link: '/projets/refonte-site',
