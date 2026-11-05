@@ -15,43 +15,43 @@ const Skills = () => {
     {
       icon: Code2,
       title: t('skills.frontend'),
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-ink to-ink-mid',
       skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5/CSS3', 'Tailwind CSS', 'Framer Motion']
     },
     {
       icon: Database,
       title: t('skills.backend'),
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-ink-mid to-gold-deep',
       skills: ['Node.js', 'Express', 'Laravel', 'API REST', 'MongoDB', 'PostgreSQL', 'Firebase', 'Authentication']
     },
     {
       icon: Smartphone,
       title: t('skills.responsive'),
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-gold-deep to-gold',
       skills: ['Mobile First', 'Progressive Web Apps', 'Cross-Browser', 'Performance', 'Accessibilité']
     },
     {
       icon: Palette,
       title: t('skills.design'),
-      color: 'from-orange-500 to-red-500',
+      color: 'from-ink to-gold-deep',
       skills: ['Figma', 'UI Design', 'UX Research', 'Prototypage', 'Design Systems']
     },
     {
       icon: Globe,
       title: t('skills.deployment'),
-      color: 'from-indigo-500 to-blue-500',
+      color: 'from-ink-soft to-ink',
       skills: ['Vercel', 'Netlify', 'GitHub', 'Git', 'CI/CD', 'Domain Management']
     },
     {
       icon: Zap,
       title: t('skills.optimization'),
-      color: 'from-yellow-500 to-orange-500',
+      color: 'from-gold to-gold-deep',
       skills: ['SEO', 'Performance Web', 'Core Web Vitals', 'Analytics', 'Lighthouse', 'GTmetrix']
     }
   ]
 
   return (
-    <section id="competences" ref={ref} className="py-20 md:py-32 bg-white dark:bg-gray-900">
+    <section id="competences" ref={ref} className="py-20 md:py-28 bg-cream dark:bg-ink">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -59,13 +59,13 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('skills.title')}
           </h2>
-          <p className="text-lg md:text-xl text-silver-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-stone dark:text-stone-soft max-w-3xl mx-auto">
             {t('skills.subtitle')}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black dark:to-white mx-auto mt-6" />
+          <div className="section-rule" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -75,19 +75,19 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-white to-silver-50 dark:from-gray-800 dark:to-gray-900 p-6 rounded-2xl shadow-lg hover-lift border border-silver-200 dark:border-gray-700"
+              className="bg-white dark:bg-ink-soft p-6 rounded-2xl shadow-sm hover-lift border border-cream-dark dark:border-white/10"
             >
               <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${category.color} rounded-xl mb-4 shadow-lg`}>
                 <category.icon className="w-7 h-7 text-white" />
               </div>
               
-              <h3 className="text-xl font-bold text-black dark:text-white mb-4">{category.title}</h3>
+              <h3 className="text-xl font-bold text-ink dark:text-white mb-4">{category.title}</h3>
               
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1.5 bg-white dark:bg-gray-700 text-black dark:text-white border border-silver-300 dark:border-gray-600 rounded-full text-xs font-medium hover:border-black dark:hover:border-white transition-colors"
+                    className="px-3 py-1.5 bg-cream dark:bg-ink text-ink dark:text-cream border border-cream-dark dark:border-white/10 rounded-full text-xs font-medium hover:border-gold transition-colors"
                   >
                     {skill}
                   </span>
@@ -115,10 +115,10 @@ const Skills = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-              className="text-center p-4 bg-gradient-to-br from-black to-silver-600 dark:from-gray-700 dark:to-gray-800 rounded-xl"
+              className="text-center p-5 bg-ink dark:bg-ink-soft rounded-2xl border border-gold/20"
             >
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
-              <div className="text-xs md:text-sm text-silver-200 dark:text-gray-300">{stat.label}</div>
+              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+              <div className="text-xs md:text-sm text-cream/80">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

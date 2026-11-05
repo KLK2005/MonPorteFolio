@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ExternalLink, Info, Github, Globe } from 'lucide-react'
+import { ExternalLink, Info, Globe } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Projects = () => {
@@ -78,7 +78,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projets" ref={ref} className="py-20 md:py-32 bg-black text-white">
+    <section id="projets" ref={ref} className="py-20 md:py-28 bg-ink text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -89,10 +89,11 @@ const Projects = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             {t('projects.title')}
           </h2>
-          <p className="text-lg md:text-xl text-silver-300 max-w-3xl mx-auto mb-4">
+          <p className="text-lg md:text-xl text-stone-soft max-w-3xl mx-auto mb-4">
             {t('projects.subtitle')}
           </p>
-          <div className="inline-flex items-center gap-2 text-sm text-silver-400 bg-silver-600/20 px-4 py-2 rounded-full">
+          <div className="section-rule mb-6" />
+          <div className="inline-flex items-center gap-2 text-sm text-gold-light bg-gold/10 border border-gold/25 px-4 py-2 rounded-full">
             <Info className="w-4 h-4" />
             {t('projects.demo')}
           </div>
@@ -105,7 +106,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-2xl"
+              className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-2xl border border-transparent hover:border-gold/40"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -115,7 +116,7 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute top-3 right-3 flex gap-2">
-                  <span className="bg-white text-black px-3 py-1 rounded-full text-xs font-bold">
+                  <span className="bg-gold text-ink px-3 py-1 rounded-full text-xs font-semibold">
                     {project.category}
                   </span>
                 </div>
@@ -141,7 +142,7 @@ const Projects = () => {
                 {/* Button */}
                 <a
                   href={project.link}
-                  className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors group/link w-full justify-center"
+                  className="inline-flex items-center gap-2 bg-ink text-gold-light px-5 py-3 rounded-full font-semibold hover:bg-gold hover:text-ink transition-colors group/link w-full justify-center"
                 >
                   <Globe className="w-4 h-4" />
                   {t('projects.view')}
@@ -159,8 +160,8 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center max-w-3xl mx-auto"
         >
-          <div className="bg-silver-600/20 backdrop-blur-sm p-6 rounded-2xl border border-silver-600/30">
-            <p className="text-silver-300 text-sm">
+          <div className="bg-white/5 p-6 rounded-2xl border border-gold/25">
+            <p className="text-gold-light text-sm">
               {t('projects.available')}
             </p>
           </div>

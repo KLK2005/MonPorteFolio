@@ -4,153 +4,47 @@
 
 @layer base {
   * {
-    @apply border-silver-300;
+    @apply border-cream-dark;
   }
   body {
-    @apply bg-white text-black;
+    @apply bg-cream text-ink antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+  ::selection {
+    background: #C4A35A;
+    color: #0B1220;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-silver-500 via-silver-300 to-silver-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gold-light via-gold to-gold-deep bg-clip-text text-transparent;
   }
-  
-  .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+
+  .section-rule {
+    @apply w-16 h-1 bg-gold mx-auto mt-6 rounded-full;
   }
-  
+
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl;
   }
 }
 
-/* Animations personnalisées */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 3s infinite;
-  background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
-  background-size: 1000px 100%;
-}
-
-
-/* Dark Mode Styles */
 .dark {
   color-scheme: dark;
 }
 
 .dark body {
-  @apply bg-gray-900 text-white;
+  @apply bg-ink text-cream;
 }
 
-.dark section {
-  @apply bg-gray-900;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
 }
 
-.dark .bg-white {
-  @apply bg-gray-800;
-}
-
-.dark .bg-silver-100 {
-  @apply bg-gray-800;
-}
-
-.dark .bg-silver-200 {
-  @apply bg-gray-700;
-}
-
-.dark .text-black {
-  @apply text-white;
-}
-
-.dark .text-silver-600 {
-  @apply text-gray-300;
-}
-
-.dark .text-silver-700 {
-  @apply text-gray-400;
-}
-
-.dark .border-gray-800 {
-  @apply border-gray-700;
-}
-
-.dark .bg-gradient-to-b {
-  @apply from-gray-900 to-gray-800;
-}
-
-.dark .bg-gradient-to-br {
-  @apply from-gray-800 to-gray-900;
-}
-
-
-/* Animations Hero */
-@keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(20px, -50px) scale(1.1);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  75% {
-    transform: translate(50px, 50px) scale(1.05);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-.animation-delay-6000 {
-  animation-delay: 6s;
-}
-
-@keyframes gradient-x {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 3s ease infinite;
-}
-
-.perspective-1000 {
-  perspective: 1000px;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

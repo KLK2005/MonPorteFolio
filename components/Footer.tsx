@@ -13,7 +13,7 @@ const Footer = () => {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-black dark:bg-gray-950 text-white py-12">
+    <footer className="bg-ink text-white py-14 border-t border-gold/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer Content */}
@@ -21,15 +21,15 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Code2 className="w-8 h-8" />
-                <span className="text-2xl font-bold">
-                  Junior<span className="text-silver-300">Koloko</span>
+                <Code2 className="w-7 h-7 text-gold" />
+                <span className="text-2xl font-display font-semibold">
+                  Junior<span className="text-gold">.</span>
                 </span>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              <p className="text-stone-soft text-sm leading-relaxed mb-4">
                 {t('footer.description')}
               </p>
-              <p className="text-gray-500 text-xs">
+              <p className="text-stone-soft text-xs">
                 📍 {t('footer.location')}
               </p>
             </div>
@@ -48,7 +48,7 @@ const Footer = () => {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-300 text-sm block"
+                      className="text-stone-soft hover:text-gold-light transition-colors duration-300 text-sm block"
                     >
                       {link.label}
                     </a>
@@ -60,7 +60,7 @@ const Footer = () => {
             {/* Services */}
             <div>
               <h3 className="text-lg font-bold mb-4">{t('footer.services.title')}</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-stone-soft">
                 <li>Sites E-commerce</li>
                 <li>Landing Pages</li>
                 <li>Sites Vitrines</li>
@@ -77,7 +77,7 @@ const Footer = () => {
                   href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-400 hover:text-green-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-stone-soft hover:text-gold-light transition-colors text-sm"
                 >
                   <Image 
                     src="/images/icons8_whatsapp_48px_1.png" 
@@ -90,16 +90,16 @@ const Footer = () => {
                 </a>
                 <a
                   href={`mailto:${email}`}
-                  className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-stone-soft hover:text-gold-light transition-colors text-sm"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 text-gold" />
                   <span>{t('contact.email')}</span>
                 </a>
                 <a
                   href={linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-stone-soft hover:text-gold-light transition-colors text-sm"
                 >
                   <Image 
                     src="/images/icons8_linkedin_48px.png" 
@@ -114,7 +114,7 @@ const Footer = () => {
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors text-sm"
+                  className="flex items-center gap-2 text-stone-soft hover:text-gold-light transition-colors text-sm"
                 >
                   <Image 
                     src="/images/icons8_github_48px.png" 
@@ -130,9 +130,9 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-gray-800">
+          <div className="pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-500 text-sm">
+              <p className="text-stone-soft text-sm">
                 © {currentYear} Junior Koloko • {t('footer.copyright')}
               </p>
             </div>

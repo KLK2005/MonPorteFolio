@@ -13,7 +13,7 @@ const About = () => {
   const { t } = useLanguage()
 
   return (
-    <section id="apropos" ref={ref} className="py-20 md:py-32 bg-white dark:bg-gray-900">
+    <section id="apropos" ref={ref} className="py-20 md:py-28 bg-white dark:bg-ink-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -21,13 +21,13 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('about.title')}
           </h2>
-          <p className="text-lg md:text-xl text-silver-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-stone dark:text-stone-soft max-w-3xl mx-auto">
             {t('about.subtitle')}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black dark:to-white mx-auto mt-6" />
+          <div className="section-rule" />
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -36,7 +36,7 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-black to-silver-600 dark:from-gray-800 dark:to-gray-700 p-8 md:p-12 rounded-3xl shadow-2xl mb-12"
+            className="bg-ink p-8 md:p-12 rounded-3xl shadow-2xl mb-12 border border-gold/20"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               {/* Photo de profil */}
@@ -47,8 +47,8 @@ const About = () => {
                 className="flex justify-center"
               >
                 <div className="relative w-48 h-48 md:w-56 md:h-56">
-                  <div className="absolute inset-0 bg-gradient-to-br from-silver-300 to-white rounded-full blur-xl opacity-50" />
-                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                  <div className="absolute inset-0 bg-gold/40 rounded-full blur-xl" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gold/70 shadow-2xl">
                     <Image
                       src="/images/profile.jpg"
                       alt="Junior Koloko - Développeur Web"
@@ -69,17 +69,17 @@ const About = () => {
                   <p className="text-lg md:text-xl text-white leading-relaxed font-semibold">
                     {t('about.role')}
                   </p>
-                  <p className="text-base md:text-lg text-silver-200 leading-relaxed">
-                    {t('about.intro1')} <strong className="text-white">{t('about.intro1.bold')}</strong> {t('about.intro1.end')}
+                  <p className="text-base md:text-lg text-stone-soft leading-relaxed">
+                    {t('about.intro1')} <strong className="text-gold-light">{t('about.intro1.bold')}</strong> {t('about.intro1.end')}
                   </p>
-                  <p className="text-base md:text-lg text-silver-200 leading-relaxed">
-                    {t('about.intro2.start')} <strong className="text-white">{t('about.intro2.years')}</strong> {t('about.intro2.and')} 
-                    <strong className="text-white"> {t('about.intro2.projects')}</strong>{t('about.intro2.end')}
+                  <p className="text-base md:text-lg text-stone-soft leading-relaxed">
+                    {t('about.intro2.start')} <strong className="text-gold-light">{t('about.intro2.years')}</strong> {t('about.intro2.and')} 
+                    <strong className="text-gold-light"> {t('about.intro2.projects')}</strong>{t('about.intro2.end')}
                   </p>
-                  <p className="text-base md:text-lg text-silver-200 leading-relaxed">
-                    {t('about.intro3.start')} <strong className="text-white">{t('about.intro3.solutions')}</strong>, 
-                    des <strong className="text-white">{t('about.intro3.prices')}</strong>, et un 
-                    <strong className="text-white"> {t('about.intro3.support')}</strong> {t('about.intro3.end')}
+                  <p className="text-base md:text-lg text-stone-soft leading-relaxed">
+                    {t('about.intro3.start')} <strong className="text-gold-light">{t('about.intro3.solutions')}</strong>, 
+                    des <strong className="text-gold-light">{t('about.intro3.prices')}</strong>, et un 
+                    <strong className="text-gold-light"> {t('about.intro3.support')}</strong> {t('about.intro3.end')}
                   </p>
                 </div>
               </div>
@@ -91,9 +91,9 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-12 bg-silver-50 dark:bg-gray-800 p-8 rounded-2xl"
+            className="mb-12 bg-cream dark:bg-ink p-8 rounded-2xl"
           >
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-6 text-center">{t('about.philosophy.title')}</h3>
+            <h3 className="text-2xl font-bold text-ink dark:text-white mb-6 text-center">{t('about.philosophy.title')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { icon: Heart, title: t('about.quality.title'), desc: t('about.quality.desc') },
@@ -106,14 +106,14 @@ const About = () => {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="flex items-start gap-4 bg-white dark:bg-gray-700 p-4 rounded-xl shadow-sm"
+                  className="flex items-start gap-4 bg-white dark:bg-ink-soft p-4 rounded-xl border border-cream-dark dark:border-white/10"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 bg-black dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-white" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-ink rounded-lg flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-black dark:text-white mb-1">{item.title}</h4>
-                    <p className="text-sm text-silver-600 dark:text-gray-300">{item.desc}</p>
+                    <h4 className="font-bold text-ink dark:text-white mb-1">{item.title}</h4>
+                    <p className="text-sm text-stone dark:text-stone-soft">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -144,13 +144,13 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className="bg-gradient-to-br from-silver-100 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl hover-lift text-center border border-silver-200 dark:border-gray-600 shadow-lg"
+                className="bg-cream dark:bg-ink p-8 rounded-2xl hover-lift text-center border border-cream-dark dark:border-white/10"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-black to-silver-600 dark:from-gray-700 dark:to-gray-600 rounded-full mb-6">
-                  <item.icon className="w-8 h-8 text-white" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gold/15 border border-gold/30 rounded-full mb-6">
+                  <item.icon className="w-8 h-8 text-gold-deep dark:text-gold" />
                 </div>
-                <h3 className="text-xl font-bold text-black dark:text-white mb-4">{item.title}</h3>
-                <p className="text-silver-600 dark:text-gray-300 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold text-ink dark:text-white mb-4">{item.title}</h3>
+                <p className="text-stone dark:text-stone-soft leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>

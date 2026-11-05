@@ -25,7 +25,7 @@ const Experience = () => {
         t('experience.1.achievement3'),
         t('experience.1.achievement4')
       ],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-ink to-ink-mid'
     },
     {
       icon: TrendingUp,
@@ -40,7 +40,7 @@ const Experience = () => {
         t('experience.2.achievement3'),
         t('experience.2.achievement4')
       ],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-gold-deep to-gold'
     },
     {
       icon: GraduationCap,
@@ -55,7 +55,7 @@ const Experience = () => {
         t('experience.3.achievement3'),
         t('experience.3.achievement4')
       ],
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-ink-mid to-gold-deep'
     },
     {
       icon: Award,
@@ -70,12 +70,12 @@ const Experience = () => {
         t('experience.4.achievement3'),
         t('experience.4.achievement4')
       ],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-ink to-gold-deep'
     }
   ]
 
   return (
-    <section id="experiences" ref={ref} className="py-20 md:py-32 bg-gradient-to-b from-silver-50 to-white dark:from-gray-800 dark:to-gray-900">
+    <section id="experiences" ref={ref} className="py-20 md:py-28 bg-white dark:bg-ink-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -83,18 +83,18 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('experience.title')}
           </h2>
-          <p className="text-lg md:text-xl text-silver-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-stone dark:text-stone-soft max-w-3xl mx-auto">
             {t('experience.subtitle')}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-silver-400 to-black dark:to-white mx-auto mt-6" />
+          <div className="section-rule" />
         </motion.div>
 
         <div className="max-w-5xl mx-auto relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gold/50" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -108,24 +108,24 @@ const Experience = () => {
             >
               {/* Content */}
               <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-silver-200 dark:border-gray-700 hover-lift">
+                <div className="bg-cream dark:bg-ink p-6 rounded-2xl shadow-sm border border-cream-dark dark:border-white/10 hover-lift">
                   <div className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br ${exp.color} rounded-xl mb-4 shadow-lg`}>
                     <exp.icon className="w-6 h-6 text-white" />
                   </div>
 
-                  <span className="inline-block bg-black dark:bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+                  <span className="inline-block bg-ink text-gold-light text-xs font-semibold px-3 py-1 rounded-full mb-3">
                     {exp.period}
                   </span>
 
-                  <h3 className="text-xl font-bold text-black dark:text-white mb-2">{exp.title}</h3>
-                  <p className="text-silver-600 dark:text-gray-400 font-semibold mb-1">{exp.company}</p>
-                  <p className="text-silver-500 dark:text-gray-500 text-sm mb-4">📍 {exp.location}</p>
-                  <p className="text-silver-700 dark:text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
+                  <h3 className="text-xl font-bold text-ink dark:text-white mb-2">{exp.title}</h3>
+                  <p className="text-gold-deep dark:text-gold font-semibold mb-1">{exp.company}</p>
+                  <p className="text-stone-soft text-sm mb-4">{exp.location}</p>
+                  <p className="text-stone dark:text-stone-soft mb-4 leading-relaxed">{exp.description}</p>
 
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-silver-600 dark:text-gray-400">
-                        <span className="text-green-500 mt-1">✓</span>
+                      <li key={idx} className="flex items-start gap-2 text-sm text-stone dark:text-stone-soft">
+                        <span className="text-gold mt-0.5">✓</span>
                         <span>{achievement}</span>
                       </li>
                     ))}
@@ -134,7 +134,7 @@ const Experience = () => {
               </div>
 
               {/* Timeline dot */}
-              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white dark:bg-gray-700 border-4 border-black dark:border-white rounded-full shadow-lg" />
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-3.5 h-3.5 bg-gold border-4 border-white dark:border-ink rounded-full" />
             </motion.div>
           ))}
         </div>

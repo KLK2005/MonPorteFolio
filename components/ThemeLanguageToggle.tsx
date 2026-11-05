@@ -29,7 +29,7 @@ const ThemeLanguageToggle = () => {
       {/* Toggle Langue */}
       <button
         onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-silver-200 dark:bg-gray-700 hover:bg-silver-300 dark:hover:bg-gray-600 transition-all duration-300"
+        className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15 text-white hover:border-gold/50 hover:text-gold-light transition-all duration-300"
         aria-label="Toggle language"
       >
         <Languages className="w-4 h-4" />
@@ -39,13 +39,13 @@ const ThemeLanguageToggle = () => {
       {/* Toggle Thème */}
       <button
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        className="p-2 rounded-full bg-silver-200 dark:bg-gray-700 hover:bg-silver-300 dark:hover:bg-gray-600 transition-all duration-300"
+        className="p-2 rounded-full bg-white/10 border border-white/15 text-white hover:border-gold/50 transition-all duration-300"
         aria-label="Toggle theme"
       >
         {theme === 'dark' ? (
-          <Sun className="w-5 h-5 text-yellow-500" />
+          <Sun className="w-5 h-5 text-gold" />
         ) : (
-          <Moon className="w-5 h-5 text-gray-700" />
+          <Moon className="w-5 h-5 text-gold-light" />
         )}
       </button>
     </div>
