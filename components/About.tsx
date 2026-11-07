@@ -38,7 +38,7 @@ const About = () => {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Texte de présentation ÉTOFFÉ */}
               <div className="md:col-span-2">
