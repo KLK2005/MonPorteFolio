@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import ThemeLanguageToggle from './ThemeLanguageToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -28,9 +27,7 @@ const Navbar = () => {
   ]
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
+    <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? 'bg-ink/90 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'
       }`}
@@ -73,30 +70,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-ink/95 backdrop-blur-lg border-t border-white/10"
-          >
-            <div className="px-4 py-6 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-white/90 hover:text-gold-light transition-colors font-medium py-3"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      {isOpen && (
+        <div className="lg:hidden bg-ink/95 backdrop-blur-lg border-t border-white/10">
+          <div className="px-4 py-6 space-y-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block text-white/90 hover:text-gold-light transition-colors font-medium py-3"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
   )
 }
 
