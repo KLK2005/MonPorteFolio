@@ -3,6 +3,7 @@
 import { Target, Eye, Lightbulb, Heart, Users, Zap } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
+import ScrollReveal from './ScrollReveal'
 
 const About = () => {
   const { t } = useLanguage()
@@ -25,7 +26,7 @@ const About = () => {
           <div className="bg-ink p-8 md:p-12 rounded-3xl shadow-2xl mb-12 border border-gold/20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               {/* Photo de profil */}
-              <div className="flex justify-center">
+              <div className="flex justify-center animate-float">
                 <div className="relative w-48 h-48 md:w-56 md:h-56">
                   <div className="absolute inset-0 bg-gold/40 rounded-full blur-xl" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gold/70 shadow-2xl">
@@ -95,32 +96,19 @@ const About = () => {
           {/* Mission, Vision, Approche */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                icon: Target,
-                title: t('about.mission.title'),
-                desc: t('about.mission.desc')
-              },
-              {
-                icon: Eye,
-                title: t('about.vision.title'),
-                desc: t('about.vision.desc')
-              },
-              {
-                icon: Lightbulb,
-                title: t('about.approach.title'),
-                desc: t('about.approach.desc')
-              }
+              { icon: Target, title: t('about.mission.title'), desc: t('about.mission.desc') },
+              { icon: Eye,    title: t('about.vision.title'),  desc: t('about.vision.desc')  },
+              { icon: Lightbulb, title: t('about.approach.title'), desc: t('about.approach.desc') }
             ].map((item, index) => (
-              <div
-                key={item.title}
-                className="bg-cream dark:bg-ink p-8 rounded-2xl hover-lift text-center border border-cream-dark dark:border-white/10"
-              >
+              <ScrollReveal key={item.title} delay={index * 120}>
+                <div className="bg-cream dark:bg-ink p-8 rounded-2xl card-hover text-center border border-cream-dark dark:border-white/10 h-full">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gold/15 border border-gold/30 rounded-full mb-6">
                   <item.icon className="w-8 h-8 text-gold-deep dark:text-gold" />
                 </div>
                 <h3 className="text-xl font-bold text-ink dark:text-white mb-4">{item.title}</h3>
                 <p className="text-stone dark:text-stone-soft leading-relaxed">{item.desc}</p>
-              </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

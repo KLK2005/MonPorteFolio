@@ -20,7 +20,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-28">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7 text-center lg:text-left space-y-8">
+            {/* Texte gauche - fade in depuis la gauche */}
+            <div className="lg:col-span-7 text-center lg:text-left space-y-8 animate-fade-in-up">
               <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-gold/30 px-5 py-2.5 rounded-full">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -84,7 +85,8 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative">
+            {/* Photo droite - float doux */}
+            <div className="lg:col-span-5 relative animate-float">
               <div className="relative max-w-md mx-auto lg:max-w-none">
                 <div className="absolute -inset-6 bg-gold/20 rounded-[2.5rem] blur-3xl" />
                 <div className="relative z-10">

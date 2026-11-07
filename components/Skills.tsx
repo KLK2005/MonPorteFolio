@@ -2,6 +2,7 @@
 
 import { Code2, Palette, Database, Globe, Smartphone, Zap } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import ScrollReveal from './ScrollReveal'
 
 const Skills = () => {
   const { t } = useLanguage()
@@ -45,42 +46,43 @@ const Skills = () => {
     }
   ]
 
+  const delays = [0, 100, 200, 300, 400, 500]
+
   return (
     <section id="competences" className="py-20 md:py-28 bg-cream dark:bg-ink">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
-            {t('skills.title')}
-          </h2>
-          <p className="text-lg md:text-xl text-stone dark:text-stone-soft max-w-3xl mx-auto">
-            {t('skills.subtitle')}
-          </p>
-          <div className="section-rule" />
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
+              {t('skills.title')}
+            </h2>
+            <p className="text-lg md:text-xl text-stone dark:text-stone-soft max-w-3xl mx-auto">
+              {t('skills.subtitle')}
+            </p>
+            <div className="section-rule" />
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, index) => (
-            <div
-              key={category.title}
-              className="bg-white dark:bg-ink-soft p-6 rounded-2xl shadow-sm hover-lift border border-cream-dark dark:border-white/10"
-            >
-              <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${category.color} rounded-xl mb-4 shadow-lg`}>
-                <category.icon className="w-7 h-7 text-white" />
+            <ScrollReveal key={category.title} delay={delays[index]}>
+              <div className="bg-white dark:bg-ink-soft p-6 rounded-2xl shadow-sm card-hover border border-cream-dark dark:border-white/10 h-full">
+                <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${category.color} rounded-xl mb-4 shadow-lg`}>
+                  <category.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-ink dark:text-white mb-4">{category.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 bg-cream dark:bg-ink text-ink dark:text-cream border border-cream-dark dark:border-white/10 rounded-full text-xs font-medium hover:border-gold transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              
-              <h3 className="text-xl font-bold text-ink dark:text-white mb-4">{category.title}</h3>
-              
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-3 py-1.5 bg-cream dark:bg-ink text-ink dark:text-cream border border-cream-dark dark:border-white/10 rounded-full text-xs font-medium hover:border-gold transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
@@ -92,13 +94,12 @@ const Skills = () => {
             { number: '100%', label: t('skills.stats.satisfaction') },
             { number: '7j', label: t('skills.stats.delivery') }
           ].map((stat, index) => (
-            <div
-              key={stat.label}
-              className="text-center p-5 bg-ink dark:bg-ink-soft rounded-2xl border border-gold/20"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
-              <div className="text-xs md:text-sm text-cream/80">{stat.label}</div>
-            </div>
+            <ScrollReveal key={stat.label} delay={index * 100}>
+              <div className="text-center p-5 bg-ink dark:bg-ink-soft rounded-2xl border border-gold/20 card-hover">
+                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
+                <div className="text-xs md:text-sm text-cream/80">{stat.label}</div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

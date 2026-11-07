@@ -2,6 +2,7 @@
 
 import { ExternalLink, Info, Globe } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import ScrollReveal from './ScrollReveal'
 
 const Projects = () => {
   const { t } = useLanguage()
@@ -75,25 +76,27 @@ const Projects = () => {
   return (
     <section id="projets" className="py-20 md:py-28 bg-ink text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('projects.title')}
-          </h2>
-          <p className="text-lg md:text-xl text-stone-soft max-w-3xl mx-auto mb-4">
-            {t('projects.subtitle')}
-          </p>
-          <div className="section-rule mb-6" />
-          <div className="inline-flex items-center gap-2 text-sm text-gold-light bg-gold/10 border border-gold/25 px-4 py-2 rounded-full">
-            <Info className="w-4 h-4" />
-            {t('projects.demo')}
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              {t('projects.title')}
+            </h2>
+            <p className="text-lg md:text-xl text-stone-soft max-w-3xl mx-auto mb-4">
+              {t('projects.subtitle')}
+            </p>
+            <div className="section-rule mb-6" />
+            <div className="inline-flex items-center gap-2 text-sm text-gold-light bg-gold/10 border border-gold/25 px-4 py-2 rounded-full">
+              <Info className="w-4 h-4" />
+              {t('projects.demo')}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
+            <ScrollReveal key={project.title} delay={index * 80}>
             <div
-              key={project.title}
-              className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-2xl border border-transparent hover:border-gold/40"
+              className="group bg-white rounded-2xl overflow-hidden card-hover shadow-2xl border border-transparent hover:border-gold/40 h-full"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -137,6 +140,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
 
