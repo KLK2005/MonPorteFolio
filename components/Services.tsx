@@ -1,14 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { Globe, Megaphone, ShoppingCart, Building2, RefreshCw, Layout } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Services = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const { t } = useLanguage()
 
   const services = [
@@ -81,14 +76,9 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" ref={ref} className="py-20 md:py-28 bg-cream dark:bg-ink">
+    <section id="services" className="py-20 md:py-28 bg-cream dark:bg-ink">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('services.title')}
           </h2>
@@ -96,15 +86,12 @@ const Services = () => {
             {t('services.subtitle')}
           </p>
           <div className="section-rule" />
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white dark:bg-ink-soft p-8 rounded-2xl shadow-sm hover-lift border border-cream-dark dark:border-white/10"
             >
               <div className="inline-flex items-center justify-center w-14 h-14 bg-ink rounded-2xl mb-6">
@@ -122,7 +109,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
