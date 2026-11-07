@@ -1,14 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { Code2, Palette, Database, Globe, Smartphone, Zap } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Skills = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const { t } = useLanguage()
 
   const skillCategories = [
@@ -51,14 +46,9 @@ const Skills = () => {
   ]
 
   return (
-    <section id="competences" ref={ref} className="py-20 md:py-28 bg-cream dark:bg-ink">
+    <section id="competences" className="py-20 md:py-28 bg-cream dark:bg-ink">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('skills.title')}
           </h2>
@@ -66,15 +56,12 @@ const Skills = () => {
             {t('skills.subtitle')}
           </p>
           <div className="section-rule" />
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, index) => (
-            <motion.div
+            <div
               key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white dark:bg-ink-soft p-6 rounded-2xl shadow-sm hover-lift border border-cream-dark dark:border-white/10"
             >
               <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${category.color} rounded-xl mb-4 shadow-lg`}>
@@ -93,35 +80,27 @@ const Skills = () => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Stats rapides */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-        >
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {[
             { number: '3+', label: t('skills.stats.experience') },
             { number: '15+', label: t('skills.stats.projects') },
             { number: '100%', label: t('skills.stats.satisfaction') },
             { number: '7j', label: t('skills.stats.delivery') }
           ].map((stat, index) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               className="text-center p-5 bg-ink dark:bg-ink-soft rounded-2xl border border-gold/20"
             >
               <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.number}</div>
               <div className="text-xs md:text-sm text-cream/80">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

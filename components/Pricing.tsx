@@ -1,14 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { Check, MessageCircle, Star } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Pricing = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const { t } = useLanguage()
   
   const whatsappNumber = '237676043968' // Format sans espaces ni +
@@ -94,14 +89,9 @@ const Pricing = () => {
   ]
 
   return (
-    <section id="tarifs" ref={ref} className="py-20 md:py-28 bg-cream dark:bg-ink">
+    <section id="tarifs" className="py-20 md:py-28 bg-cream dark:bg-ink">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           {/* Bandeau Offre Limitée */}
           <div className="mb-8 inline-block">
             <div className="bg-ink text-gold-light px-6 py-3 rounded-full border border-gold/40">
@@ -118,15 +108,12 @@ const Pricing = () => {
             {t('pricing.subtitle')}
           </p>
           <div className="section-rule" />
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
-            <motion.div
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
               className={`relative rounded-3xl shadow-xl overflow-hidden hover-lift border ${
                 plan.popular
                   ? 'bg-ink text-white border-gold lg:scale-105 shadow-gold'
@@ -216,17 +203,12 @@ const Pricing = () => {
                   {t('pricing.choose')} {plan.name}
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 text-center max-w-3xl mx-auto"
-        >
+        <div className="mt-16 text-center max-w-3xl mx-auto">
           <div className="bg-ink border border-gold/25 p-8 rounded-2xl text-white">
             <h3 className="text-2xl font-bold mb-4">{t('pricing.custom.title')}</h3>
             <p className="text-stone-soft mb-6">
@@ -244,7 +226,7 @@ const Pricing = () => {
               {t('pricing.custom.cta')}
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

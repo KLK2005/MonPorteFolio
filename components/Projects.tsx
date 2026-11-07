@@ -1,14 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { ExternalLink, Info, Globe } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Projects = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const { t } = useLanguage()
 
   const projects = [
@@ -78,14 +73,9 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projets" ref={ref} className="py-20 md:py-28 bg-ink text-white">
+    <section id="projets" className="py-20 md:py-28 bg-ink text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             {t('projects.title')}
           </h2>
@@ -97,15 +87,12 @@ const Projects = () => {
             <Info className="w-4 h-4" />
             {t('projects.demo')}
           </div>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-2xl border border-transparent hover:border-gold/40"
             >
               {/* Image */}
@@ -149,23 +136,18 @@ const Projects = () => {
                   <ExternalLink className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Note finale */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center max-w-3xl mx-auto"
-        >
+        <div className="mt-16 text-center max-w-3xl mx-auto">
           <div className="bg-white/5 p-6 rounded-2xl border border-gold/25">
             <p className="text-gold-light text-sm">
               {t('projects.available')}
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
