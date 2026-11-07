@@ -1,14 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { Briefcase, GraduationCap, Award, TrendingUp } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Experience = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const { t } = useLanguage()
 
   const experiences = [
@@ -75,14 +70,9 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experiences" ref={ref} className="py-20 md:py-28 bg-white dark:bg-ink-soft">
+    <section id="experiences" className="py-20 md:py-28 bg-white dark:bg-ink-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('experience.title')}
           </h2>
@@ -90,18 +80,15 @@ const Experience = () => {
             {t('experience.subtitle')}
           </p>
           <div className="section-rule" />
-        </motion.div>
+        </div>
 
         <div className="max-w-5xl mx-auto relative">
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gold/50" />
 
           {experiences.map((exp, index) => (
-            <motion.div
+            <div
               key={exp.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
               className={`relative flex items-center mb-12 ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
@@ -135,7 +122,7 @@ const Experience = () => {
 
               {/* Timeline dot */}
               <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-3.5 h-3.5 bg-gold border-4 border-white dark:border-ink rounded-full" />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

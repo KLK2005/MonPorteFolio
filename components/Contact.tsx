@@ -1,15 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { Mail, Send } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const Contact = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const { t } = useLanguage()
   
@@ -30,14 +26,9 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" ref={ref} className="py-20 md:py-28 bg-white dark:bg-ink-soft">
+    <section id="contact" className="py-20 md:py-28 bg-white dark:bg-ink-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
             {t('contact.title')}
           </h2>
@@ -45,16 +36,11 @@ const Contact = () => {
             {t('contact.subtitle')}
           </p>
           <div className="section-rule" />
-        </motion.div>
+        </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
-          >
+          <div className="space-y-8">
             <div className="bg-ink border border-gold/25 p-8 rounded-3xl text-white">
               <h3 className="text-2xl font-bold mb-6">{t('contact.title')}</h3>
               <p className="text-stone-soft mb-8 leading-relaxed">
@@ -135,14 +121,10 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <div>
             <form onSubmit={handleSubmit} className="bg-cream dark:bg-ink p-8 rounded-3xl border border-cream-dark dark:border-white/10">
               <h3 className="text-2xl font-bold text-ink dark:text-white mb-6">{t('contact.form.title')}</h3>
               
@@ -205,7 +187,7 @@ const Contact = () => {
                 </p>
               </div>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
